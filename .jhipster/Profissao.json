@@ -1,0 +1,27 @@
+{
+    "name": "Profissao",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "doenteSocioFamiliar",
+            "otherEntityRelationshipName": "profissao",
+            "relationshipName": "doenteSocioFamiliar"
+        }
+    ],
+    "changelogDate": "20200111000236",
+    "entityTableName": "profissao",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

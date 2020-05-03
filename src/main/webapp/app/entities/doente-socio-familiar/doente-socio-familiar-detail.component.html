@@ -1,0 +1,91 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="doenteSocioFamiliar">
+            <h2><span jhiTranslate="dialwinApp.doenteSocioFamiliar.detail.title">Doente Socio Familiar</span> {{doenteSocioFamiliar.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="dialwinApp.doenteSocioFamiliar.habilitacoes">Habilitacoes</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'dialwinApp.Habilitacoes.' + doenteSocioFamiliar.habilitacoes}}">{{doenteSocioFamiliar.habilitacoes}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteSocioFamiliar.estCivil">Est Civil</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'dialwinApp.EstCivil.' + doenteSocioFamiliar.estCivil}}">{{doenteSocioFamiliar.estCivil}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteSocioFamiliar.conjugeNome">Conjuge Nome</span></dt>
+                <dd>
+                    <span>{{doenteSocioFamiliar.conjugeNome}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteSocioFamiliar.conjugeProf">Conjuge Prof</span></dt>
+                <dd>
+                    <span>{{doenteSocioFamiliar.conjugeProf}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteSocioFamiliar.activTempLiv">Activ Temp Liv</span></dt>
+                <dd>
+                    <span>{{doenteSocioFamiliar.activTempLiv}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteSocioFamiliar.habitacaoObs">Habitacao Obs</span></dt>
+                <dd>
+                    <span>{{doenteSocioFamiliar.habitacaoObs}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteSocioFamiliar.grauConfortoObs">Grau Conforto Obs</span></dt>
+                <dd>
+                    <span>{{doenteSocioFamiliar.grauConfortoObs}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteSocioFamiliar.respostaSocial">Resposta Social</span></dt>
+                <dd>
+                    <span>{{doenteSocioFamiliar.respostaSocial}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteSocioFamiliar.doente">Doente</span></dt>
+                <dd>
+                    <div *ngIf="doenteSocioFamiliar.doente">
+                        <a [routerLink]="['/doente', doenteSocioFamiliar.doente?.id, 'view']">{{doenteSocioFamiliar.doente?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteSocioFamiliar.vitalidade">Vitalidade</span></dt>
+                <dd>
+                    <div *ngIf="doenteSocioFamiliar.vitalidade">
+                        <a [routerLink]="['/vitalidade', doenteSocioFamiliar.vitalidade?.id, 'view']">{{doenteSocioFamiliar.vitalidade?.percentagem}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteSocioFamiliar.habit">Habit</span></dt>
+                <dd>
+                    <div *ngIf="doenteSocioFamiliar.habit">
+                        <a [routerLink]="['/habit', doenteSocioFamiliar.habit?.id, 'view']">{{doenteSocioFamiliar.habit?.nome}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteSocioFamiliar.grauConf">Grau Conf</span></dt>
+                <dd>
+                    <div *ngIf="doenteSocioFamiliar.grauConf">
+                        <a [routerLink]="['/grau-conf', doenteSocioFamiliar.grauConf?.id, 'view']">{{doenteSocioFamiliar.grauConf?.nome}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteSocioFamiliar.profissao">Profissao</span></dt>
+                <dd>
+                    <div *ngIf="doenteSocioFamiliar.profissao">
+                        <a [routerLink]="['/profissao', doenteSocioFamiliar.profissao?.id, 'view']">{{doenteSocioFamiliar.profissao?.nome}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteSocioFamiliar.sitProf">Sit Prof</span></dt>
+                <dd>
+                    <div *ngIf="doenteSocioFamiliar.sitProf">
+                        <a [routerLink]="['/sit-prof', doenteSocioFamiliar.sitProf?.id, 'view']">{{doenteSocioFamiliar.sitProf?.nome}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/doente-socio-familiar', doenteSocioFamiliar.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

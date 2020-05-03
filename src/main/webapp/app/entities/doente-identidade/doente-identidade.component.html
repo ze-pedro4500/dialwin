@@ -1,0 +1,113 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="dialwinApp.doenteIdentidade.home.title">Doente Identidades</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-doente-identidade" [routerLink]="['/doente-identidade/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="dialwinApp.doenteIdentidade.home.createLabel">
+            Create a new Doente Identidade
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="doenteIdentidades?.length === 0">
+        <span jhiTranslate="dialwinApp.doenteIdentidade.home.notFound">No doenteIdentidades found</span>
+    </div>
+    <div class="table-responsive" *ngIf="doenteIdentidades?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteIdentidade.nome">Nome</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteIdentidade.dataNasc">Data Nasc</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteIdentidade.altura">Altura</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteIdentidade.morada">Morada</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteIdentidade.codPost">Cod Post</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteIdentidade.freguesia">Freguesia</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteIdentidade.nif">Nif</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteIdentidade.medFam">Med Fam</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteIdentidade.sexo">Sexo</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteIdentidade.telef">Telef</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteIdentidade.telef2">Telef 2</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteIdentidade.docId">Doc Id</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteIdentidade.nBenef">N Benef</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteIdentidade.nUtente">N Utente</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteIdentidade.numProcHosp">Num Proc Hosp</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteIdentidade.doente">Doente</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteIdentidade.subsistemas">Subsistemas</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteIdentidade.centroSaude">Centro Saude</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteIdentidade.aCES">A CES</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteIdentidade.hospRef">Hosp Ref</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let doenteIdentidade of doenteIdentidades ;trackBy: trackId">
+                <td><a [routerLink]="['/doente-identidade', doenteIdentidade.id, 'view' ]">{{doenteIdentidade.id}}</a></td>
+                <td>{{doenteIdentidade.nome}}</td>
+                <td>{{doenteIdentidade.dataNasc | date:'mediumDate'}}</td>
+                <td>{{doenteIdentidade.altura}}</td>
+                <td>{{doenteIdentidade.morada}}</td>
+                <td>{{doenteIdentidade.codPost}}</td>
+                <td>{{doenteIdentidade.freguesia}}</td>
+                <td>{{doenteIdentidade.nif}}</td>
+                <td>{{doenteIdentidade.medFam}}</td>
+                <td jhiTranslate="{{'dialwinApp.Sexo.' + doenteIdentidade.sexo}}">{{doenteIdentidade.sexo}}</td>
+                <td>{{doenteIdentidade.telef}}</td>
+                <td>{{doenteIdentidade.telef2}}</td>
+                <td>{{doenteIdentidade.docId}}</td>
+                <td>{{doenteIdentidade.nBenef}}</td>
+                <td>{{doenteIdentidade.nUtente}}</td>
+                <td>{{doenteIdentidade.numProcHosp}}</td>
+                <td>
+                    <div *ngIf="doenteIdentidade.doente">
+                        <a [routerLink]="['/doente', doenteIdentidade.doente?.id, 'view' ]" >{{doenteIdentidade.doente?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="doenteIdentidade.subsistemas">
+                        <a [routerLink]="['/sub-sistemas', doenteIdentidade.subsistemas?.id, 'view' ]" >{{doenteIdentidade.subsistemas?.gidNome}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="doenteIdentidade.centroSaude">
+                        <a [routerLink]="['/centro-saude', doenteIdentidade.centroSaude?.id, 'view' ]" >{{doenteIdentidade.centroSaude?.nome}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="doenteIdentidade.aCES">
+                        <a [routerLink]="['/aces', doenteIdentidade.aCES?.id, 'view' ]" >{{doenteIdentidade.aCES?.nome}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="doenteIdentidade.hospRef">
+                        <a [routerLink]="['/hosp-ref', doenteIdentidade.hospRef?.id, 'view' ]" >{{doenteIdentidade.hospRef?.nome}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/doente-identidade', doenteIdentidade.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/doente-identidade', doenteIdentidade.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(doenteIdentidade)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

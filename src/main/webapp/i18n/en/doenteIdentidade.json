@@ -1,0 +1,42 @@
+{
+  "dialwinApp": {
+    "doenteIdentidade": {
+      "home": {
+        "title": "Doente Identidades",
+        "createLabel": "Create a new Doente Identidade",
+        "createOrEditLabel": "Create or edit a Doente Identidade",
+        "notFound": "No Doente Identidades found"
+      },
+      "created": "A new Doente Identidade is created with identifier {{ param }}",
+      "updated": "A Doente Identidade is updated with identifier {{ param }}",
+      "deleted": "A Doente Identidade is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Doente Identidade {{ id }}?"
+      },
+      "detail": {
+        "title": "Doente Identidade"
+      },
+      "nome": "Nome",
+      "dataNasc": "Data Nasc",
+      "altura": "Altura",
+      "morada": "Morada",
+      "codPost": "Cod Post",
+      "freguesia": "Freguesia",
+      "nif": "Nif",
+      "medFam": "Med Fam",
+      "sexo": "Sexo",
+      "telef": "Telef",
+      "telef2": "Telef 2",
+      "docId": "Doc Id",
+      "nBenef": "N Benef",
+      "nUtente": "N Utente",
+      "numProcHosp": "Num Proc Hosp",
+      "doente": "Doente",
+      "subsistemas": "Subsistemas",
+      "centroSaude": "Centro Saude",
+      "aCES": "A CES",
+      "hospRef": "Hosp Ref",
+      "pais": "Pais"
+    }
+  }
+}

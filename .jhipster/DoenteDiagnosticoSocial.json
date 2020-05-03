@@ -1,0 +1,28 @@
+{
+    "name": "DoenteDiagnosticoSocial",
+    "fields": [
+        {
+            "fieldName": "descr",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "doente",
+            "otherEntityRelationshipName": "doenteDiagnosticoSocial",
+            "relationshipName": "doente",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200111000238",
+    "entityTableName": "doente_diagnostico_social",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

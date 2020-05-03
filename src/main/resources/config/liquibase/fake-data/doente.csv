@@ -1,0 +1,11 @@
+id;situacao
+1;StatusDP
+2;StatusAlta
+3;StatusEmTransito
+4;StatusDP
+5;StatusTranspl
+6;StatusFalecido
+7;StatusTransfer
+8;StatusFalecido
+9;StatusAlta
+10;StatusEmFerias

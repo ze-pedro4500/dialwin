@@ -1,0 +1,27 @@
+{
+    "name": "SitProf",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "doenteSocioFamiliar",
+            "otherEntityRelationshipName": "sitProf",
+            "relationshipName": "doenteSocioFamiliar"
+        }
+    ],
+    "changelogDate": "20200111000235",
+    "entityTableName": "sit_prof",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

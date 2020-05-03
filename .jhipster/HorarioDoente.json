@@ -1,0 +1,44 @@
+{
+    "name": "HorarioDoente",
+    "fields": [
+        {
+            "fieldName": "dia",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "turno",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sala",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "posto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "duracao",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "doente",
+            "otherEntityRelationshipName": "horarioDoente",
+            "relationshipName": "doente",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200111000241",
+    "entityTableName": "horario_doente",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

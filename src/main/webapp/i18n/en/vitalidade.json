@@ -1,0 +1,23 @@
+{
+  "dialwinApp": {
+    "vitalidade": {
+      "home": {
+        "title": "Vitalidades",
+        "createLabel": "Create a new Vitalidade",
+        "createOrEditLabel": "Create or edit a Vitalidade",
+        "notFound": "No Vitalidades found"
+      },
+      "created": "A new Vitalidade is created with identifier {{ param }}",
+      "updated": "A Vitalidade is updated with identifier {{ param }}",
+      "deleted": "A Vitalidade is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Vitalidade {{ id }}?"
+      },
+      "detail": {
+        "title": "Vitalidade"
+      },
+      "nome": "Nome",
+      "percentagem": "Percentagem"
+    }
+  }
+}

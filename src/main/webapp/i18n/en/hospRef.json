@@ -1,0 +1,23 @@
+{
+  "dialwinApp": {
+    "hospRef": {
+      "home": {
+        "title": "Hosp Refs",
+        "createLabel": "Create a new Hosp Ref",
+        "createOrEditLabel": "Create or edit a Hosp Ref",
+        "notFound": "No Hosp Refs found"
+      },
+      "created": "A new Hosp Ref is created with identifier {{ param }}",
+      "updated": "A Hosp Ref is updated with identifier {{ param }}",
+      "deleted": "A Hosp Ref is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Hosp Ref {{ id }}?"
+      },
+      "detail": {
+        "title": "Hosp Ref"
+      },
+      "nome": "Nome",
+      "doenteIdentidade": "Doente Identidade"
+    }
+  }
+}

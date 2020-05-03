@@ -1,0 +1,22 @@
+<div id="demonome">
+<h1 id="demo">Demografia</h1>
+<h2 id="nome">{{doenteNome}}</h2>
+</div>
+<div id="navbar">
+    <a [ngStyle]="{'color': identidade? colorA : colorB}"class="navItem" (click)="identidadeRoute()">Identidade</a>
+    <a [ngStyle]="{'color': contactos? colorA : colorB}" class="navItem" (click)="contactosRoute()">Contactos</a>
+    <a [ngStyle]="{'color': sociofamiliar? colorA : colorB}"class="navItem" (click)="socioFamiliarRoute()">Perfil Socio-familiar</a>
+    <a [ngStyle]="{'color': pfs? colorA : colorB}"class="navItem" (click)="socialRoute()">Processo Social</a>
+    <a [ngStyle]="{'color': horario? colorA : colorB}"class="navItem" (click)="horarioRoute()">Horario do Doente</a>
+    <a [ngStyle]="{'color': movimentos? colorA : colorB}"class="navItem" (click)="historicoRoute()">Histórico de Movimentos</a>
+    <button class="btn btn-primary" id="bt" (click)="changeSelect(true)">Selecionar Doente</button>
+    
+</div>
+<br>
+<jhi-seletordoente></jhi-seletordoente>
+<jhi-demoid></jhi-demoid>
+<jhi-contactos></jhi-contactos>
+<jhi-sociofamiliar></jhi-sociofamiliar>
+<jhi-processosocial></jhi-processosocial>
+<jhi-horario></jhi-horario>
+<jhi-movimentos></jhi-movimentos>

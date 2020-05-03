@@ -1,0 +1,31 @@
+{
+  "dialwinApp": {
+    "doente": {
+      "home": {
+        "title": "Doentes",
+        "createLabel": "Create a new Doente",
+        "createOrEditLabel": "Create or edit a Doente",
+        "notFound": "No Doentes found"
+      },
+      "created": "A new Doente is created with identifier {{ param }}",
+      "updated": "A Doente is updated with identifier {{ param }}",
+      "deleted": "A Doente is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Doente {{ id }}?"
+      },
+      "detail": {
+        "title": "Doente"
+      },
+      "situacao": "Situacao",
+      "horarioDoente": "Horario Doente",
+      "doenteDiagnosticoSocial": "Doente Diagnostico Social",
+      "doenteRegistosIntervencoes": "Doente Registos Intervencoes",
+      "doenteHistMovimentos": "Doente Hist Movimentos",
+      "doenteContactosOutros": "Doente Contactos Outros",
+      "doenteIdentidade": "Doente Identidade",
+      "doenteContactos": "Doente Contactos",
+      "doenteSocioFamiliar": "Doente Socio Familiar",
+      "turnos": "Turnos"
+    }
+  }
+}

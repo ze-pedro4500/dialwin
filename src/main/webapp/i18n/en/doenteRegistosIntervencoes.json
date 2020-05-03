@@ -1,0 +1,23 @@
+{
+  "dialwinApp": {
+    "doenteRegistosIntervencoes": {
+      "home": {
+        "title": "Doente Registos Intervencoes",
+        "createLabel": "Create a new Doente Registos Intervencoes",
+        "createOrEditLabel": "Create or edit a Doente Registos Intervencoes",
+        "notFound": "No Doente Registos Intervencoes found"
+      },
+      "created": "A new Doente Registos Intervencoes is created with identifier {{ param }}",
+      "updated": "A Doente Registos Intervencoes is updated with identifier {{ param }}",
+      "deleted": "A Doente Registos Intervencoes is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Doente Registos Intervencoes {{ id }}?"
+      },
+      "detail": {
+        "title": "Doente Registos Intervencoes"
+      },
+      "descr": "Descr",
+      "doente": "Doente"
+    }
+  }
+}

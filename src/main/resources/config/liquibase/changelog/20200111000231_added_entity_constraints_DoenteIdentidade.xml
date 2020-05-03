@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity DoenteIdentidade.
+    -->
+    <changeSet id="20200111000231-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="doente_id"
+                                 baseTableName="doente_identidade"
+                                 constraintName="fk_doente_identidade_doente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="doente"/>
+
+        <addForeignKeyConstraint baseColumnNames="subsistemas_id"
+                                 baseTableName="doente_identidade"
+                                 constraintName="fk_doente_identidade_subsistemas_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sub_sistemas"/>
+
+        <addForeignKeyConstraint baseColumnNames="centro_saude_id"
+                                 baseTableName="doente_identidade"
+                                 constraintName="fk_doente_identidade_centro_saude_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="centro_saude"/>
+
+        <addForeignKeyConstraint baseColumnNames="aces_id"
+                                 baseTableName="doente_identidade"
+                                 constraintName="fk_doente_identidade_aces_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="aces"/>
+
+        <addForeignKeyConstraint baseColumnNames="hosp_ref_id"
+                                 baseTableName="doente_identidade"
+                                 constraintName="fk_doente_identidade_hosp_ref_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="hosp_ref"/>
+
+    </changeSet>
+</databaseChangeLog>

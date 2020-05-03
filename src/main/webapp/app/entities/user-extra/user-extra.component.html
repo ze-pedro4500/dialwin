@@ -1,0 +1,83 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="dialwinApp.userExtra.home.title">User Extras</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-user-extra" [routerLink]="['/user-extra/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="dialwinApp.userExtra.home.createLabel">
+            Create a new User Extra
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="userExtras?.length === 0">
+        <span jhiTranslate="dialwinApp.userExtra.home.notFound">No userExtras found</span>
+    </div>
+    <div class="table-responsive" *ngIf="userExtras?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userExtra.activo">Activo</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userExtra.nome">Nome</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userExtra.morada">Morada</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userExtra.codP">Cod P</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userExtra.telef">Telef</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userExtra.permissChange">Permiss Change</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userExtra.nif">Nif</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userExtra.user">User</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userExtra.userPermissions">User Permissions</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userExtra.userProfile">User Profile</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let userExtra of userExtras ;trackBy: trackId">
+                <td><a [routerLink]="['/user-extra', userExtra.id, 'view' ]">{{userExtra.id}}</a></td>
+                <td>{{userExtra.activo}}</td>
+                <td>{{userExtra.nome}}</td>
+                <td>{{userExtra.morada}}</td>
+                <td>{{userExtra.codP}}</td>
+                <td>{{userExtra.telef}}</td>
+                <td>{{userExtra.permissChange}}</td>
+                <td>{{userExtra.nif}}</td>
+                <td>
+                    {{userExtra.user?.id}}
+                </td>
+                <td>
+                    <div *ngIf="userExtra.userPermissions">
+                        <a [routerLink]="['/user-permissions', userExtra.userPermissions?.id, 'view' ]" >{{userExtra.userPermissions?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="userExtra.userProfile">
+                        <a [routerLink]="['/user-profile', userExtra.userProfile?.id, 'view' ]" >{{userExtra.userProfile?.nome}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/user-extra', userExtra.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/user-extra', userExtra.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(userExtra)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

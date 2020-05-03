@@ -1,0 +1,35 @@
+{
+  "dialwinApp": {
+    "doenteSocioFamiliar": {
+      "home": {
+        "title": "Doente Socio Familiars",
+        "createLabel": "Create a new Doente Socio Familiar",
+        "createOrEditLabel": "Create or edit a Doente Socio Familiar",
+        "notFound": "No Doente Socio Familiars found"
+      },
+      "created": "A new Doente Socio Familiar is created with identifier {{ param }}",
+      "updated": "A Doente Socio Familiar is updated with identifier {{ param }}",
+      "deleted": "A Doente Socio Familiar is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Doente Socio Familiar {{ id }}?"
+      },
+      "detail": {
+        "title": "Doente Socio Familiar"
+      },
+      "habilitacoes": "Habilitacoes",
+      "estCivil": "Est Civil",
+      "conjugeNome": "Conjuge Nome",
+      "conjugeProf": "Conjuge Prof",
+      "activTempLiv": "Activ Temp Liv",
+      "habitacaoObs": "Habitacao Obs",
+      "grauConfortoObs": "Grau Conforto Obs",
+      "respostaSocial": "Resposta Social",
+      "doente": "Doente",
+      "vitalidade": "Vitalidade",
+      "habit": "Habit",
+      "grauConf": "Grau Conf",
+      "profissao": "Profissao",
+      "sitProf": "Sit Prof"
+    }
+  }
+}

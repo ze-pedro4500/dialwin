@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="registoData">
+            <h2><span jhiTranslate="dialwinApp.registoData.detail.title">Registo Data</span> {{ registoData.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="dialwinApp.registoData.registo">Registo</span></dt>
+                <dd>
+                    <span>{{ registoData.registo }}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.registoData.data">Data</span></dt>
+                <dd>
+                    <span>{{ registoData.data }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/registo-data', registoData.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

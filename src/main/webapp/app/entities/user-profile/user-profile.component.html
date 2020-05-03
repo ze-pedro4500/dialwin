@@ -1,0 +1,75 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="dialwinApp.userProfile.home.title">User Profiles</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-user-profile" [routerLink]="['/user-profile/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="dialwinApp.userProfile.home.createLabel">
+            Create a new User Profile
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="userProfiles?.length === 0">
+        <span jhiTranslate="dialwinApp.userProfile.home.notFound">No userProfiles found</span>
+    </div>
+    <div class="table-responsive" *ngIf="userProfiles?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.nome">Nome</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.demograf">Demograf</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.social">Social</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.procClin">Proc Clin</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.dialEnf">Dial Enf</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.dialStat">Dial Stat</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.qualiStat">Quali Stat</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.labLink">Lab Link</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.gidLink">Gid Link</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.asterixFarma">Asterix Farma</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.userProfile.asterixGabMed">Asterix Gab Med</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let userProfile of userProfiles ;trackBy: trackId">
+                <td><a [routerLink]="['/user-profile', userProfile.id, 'view' ]">{{userProfile.id}}</a></td>
+                <td>{{userProfile.nome}}</td>
+                <td>{{userProfile.demograf}}</td>
+                <td>{{userProfile.social}}</td>
+                <td>{{userProfile.procClin}}</td>
+                <td>{{userProfile.dialEnf}}</td>
+                <td>{{userProfile.dialStat}}</td>
+                <td>{{userProfile.qualiStat}}</td>
+                <td>{{userProfile.labLink}}</td>
+                <td>{{userProfile.gidLink}}</td>
+                <td>{{userProfile.asterixFarma}}</td>
+                <td>{{userProfile.asterixGabMed}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/user-profile', userProfile.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/user-profile', userProfile.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(userProfile)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

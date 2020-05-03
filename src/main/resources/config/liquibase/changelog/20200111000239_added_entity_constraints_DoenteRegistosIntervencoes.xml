@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity DoenteRegistosIntervencoes.
+    -->
+    <changeSet id="20200111000239-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="doente_id"
+                                 baseTableName="doente_registos_intervencoes"
+                                 constraintName="fk_doente_registos_intervencoes_doente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="doente"/>
+
+    </changeSet>
+</databaseChangeLog>

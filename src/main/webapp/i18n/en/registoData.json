@@ -1,0 +1,23 @@
+{
+  "dialwinApp": {
+    "registoData": {
+      "home": {
+        "title": "Registo Data",
+        "createLabel": "Create a new Registo Data",
+        "createOrEditLabel": "Create or edit a Registo Data",
+        "notFound": "No Registo Data found"
+      },
+      "created": "A new Registo Data is created with identifier {{ param }}",
+      "updated": "A Registo Data is updated with identifier {{ param }}",
+      "deleted": "A Registo Data is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Registo Data {{ id }}?"
+      },
+      "detail": {
+        "title": "Registo Data"
+      },
+      "registo": "Registo",
+      "data": "Data"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="doenteContactosOutros">
+            <h2><span jhiTranslate="dialwinApp.doenteContactosOutros.detail.title">Doente Contactos Outros</span> {{doenteContactosOutros.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="dialwinApp.doenteContactosOutros.nome">Nome</span></dt>
+                <dd>
+                    <span>{{doenteContactosOutros.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteContactosOutros.parentesco">Parentesco</span></dt>
+                <dd>
+                    <span>{{doenteContactosOutros.parentesco}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteContactosOutros.coabita">Coabita</span></dt>
+                <dd>
+                    <span>{{doenteContactosOutros.coabita}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteContactosOutros.telef">Telef</span></dt>
+                <dd>
+                    <span>{{doenteContactosOutros.telef}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteContactosOutros.ocupacao">Ocupacao</span></dt>
+                <dd>
+                    <span>{{doenteContactosOutros.ocupacao}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteContactosOutros.obs">Obs</span></dt>
+                <dd>
+                    <span>{{doenteContactosOutros.obs}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteContactosOutros.preferencial">Preferencial</span></dt>
+                <dd>
+                    <span>{{doenteContactosOutros.preferencial}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteContactosOutros.doente">Doente</span></dt>
+                <dd>
+                    <div *ngIf="doenteContactosOutros.doente">
+                        <a [routerLink]="['/doente', doenteContactosOutros.doente?.id, 'view']">{{doenteContactosOutros.doente?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/doente-contactos-outros', doenteContactosOutros.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

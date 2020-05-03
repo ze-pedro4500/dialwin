@@ -1,0 +1,32 @@
+{
+  "dialwinApp": {
+    "userPermissions": {
+      "home": {
+        "title": "User Permissions",
+        "createLabel": "Create a new User Permissions",
+        "createOrEditLabel": "Create or edit a User Permissions",
+        "notFound": "No User Permissions found"
+      },
+      "created": "A new User Permissions is created with identifier {{ param }}",
+      "updated": "A User Permissions is updated with identifier {{ param }}",
+      "deleted": "A User Permissions is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete User Permissions {{ id }}?"
+      },
+      "detail": {
+        "title": "User Permissions"
+      },
+      "demograf": "Demograf",
+      "social": "Social",
+      "procClin": "Proc Clin",
+      "dialEnf": "Dial Enf",
+      "dialStat": "Dial Stat",
+      "qualiStat": "Quali Stat",
+      "labLink": "Lab Link",
+      "gidLink": "Gid Link",
+      "asterixFarma": "Asterix Farma",
+      "asterixGabMed": "Asterix Gab Med",
+      "userExtra": "User Extra"
+    }
+  }
+}

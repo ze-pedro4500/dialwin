@@ -1,0 +1,9 @@
+{
+  "dialwinApp": {
+    "Sexo": {
+      "null": "",
+      "Masculino": "Masculino",
+      "Feminino": "Feminino"
+    }
+  }
+}

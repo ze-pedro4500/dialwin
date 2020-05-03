@@ -1,0 +1,105 @@
+<div *ngIf="socioFamiliar" class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label class="form-control-label lab" jhiTranslate="dialwinApp.doenteSocioFamiliar.habilitacoes" for="field_habilitacoes">Habilitacoes</label>
+                            <select class="form-control" name="habilitacoes" formControlName="habilitacoes" id="field_habilitacoes">
+                                <option value="Iletrado">{{'dialwinApp.Habilitacoes.Iletrado' | translate}}</option>
+                                <option value="LeEscreve">{{'dialwinApp.Habilitacoes.LeEscreve' | translate}}</option>
+                                <option value="EnsinoBasico">{{'dialwinApp.Habilitacoes.EnsinoBasico' | translate}}</option>
+                                <option value="NonoAno">{{'dialwinApp.Habilitacoes.NonoAno' | translate}}</option>
+                                <option value="DecimoSegundoAno">{{'dialwinApp.Habilitacoes.DecimoSegundoAno' | translate}}</option>
+                                <option value="CursoTecnico">{{'dialwinApp.Habilitacoes.CursoTecnico' | translate}}</option>
+                                <option value="Cursosuperior">{{'dialwinApp.Habilitacoes.Cursosuperior' | translate}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label lab" jhiTranslate="dialwinApp.doenteSocioFamiliar.conjugeNome" for="field_conjugeNome">Conjuge Nome</label>
+                            <input type="text" class="form-control" name="conjugeNome" id="field_conjugeNome"
+                                   formControlName="conjugeNome"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label lab" for="field_activTempLiv">Actividade Tempos Livres</label>
+                            <input type="text" class="form-control" name="activTempLiv" id="field_activTempLiv"
+                                   formControlName="activTempLiv"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label lab" for="field_grauConfortoObs">Grau Conforto Observações</label>
+                            <input type="text" class="form-control" name="grauConfortoObs" id="field_grauConfortoObs"
+                                   formControlName="grauConfortoObs"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label lab" for="field_vitalidade">Vitalidade</label>
+                            <select class="form-control" id="field_vitalidade" name="vitalidade" formControlName="vitalidade">
+                                <option [ngValue]="null"></option>
+                                <option [ngValue]="vitalidadeOption.id === editForm.get('vitalidade').value?.id ? editForm.get('vitalidade').value : vitalidadeOption" *ngFor="let vitalidadeOption of vitalidades; trackBy: trackVitalidadeById">{{vitalidadeOption.percentagem}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label lab" for="field_habit">Habitação</label>
+                            <select class="form-control" id="field_habit" name="habit" formControlName="habit">
+                                <option [ngValue]="null"></option>
+                                <option [ngValue]="habitOption.id === editForm.get('habit').value?.id ? editForm.get('habit').value : habitOption" *ngFor="let habitOption of habits; trackBy: trackHabitById">{{habitOption.nome}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label lab" for="field_profissao">Profissão</label>
+                            <select class="form-control" id="field_profissao" name="profissao" formControlName="profissao">
+                                <option [ngValue]="null"></option>
+                                <option [ngValue]="profissaoOption.id === editForm.get('profissao').value?.id ? editForm.get('profissao').value : profissaoOption" *ngFor="let profissaoOption of profissaos; trackBy: trackProfissaoById">{{profissaoOption.nome}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label class="form-control-label lab" for="field_estCivil">Estado Civil</label>
+                            <select class="form-control" name="estCivil" formControlName="estCivil" id="field_estCivil">
+                                <option value="Solteiro">{{'dialwinApp.EstCivil.Solteiro' | translate}}</option>
+                                <option value="Casado">{{'dialwinApp.EstCivil.Casado' | translate}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label lab" for="field_conjugeProf">Conjuge Profissão</label>
+                            <input type="text" class="form-control" name="conjugeProf" id="field_conjugeProf"
+                                   formControlName="conjugeProf"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label lab" for="field_habitacaoObs">Habitacao Observações</label>
+                            <input type="text" class="form-control" name="habitacaoObs" id="field_habitacaoObs"
+                                   formControlName="habitacaoObs"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label lab" jhiTranslate="dialwinApp.doenteSocioFamiliar.respostaSocial" for="field_respostaSocial">Resposta Social</label>
+                            <input type="text" class="form-control" name="respostaSocial" id="field_respostaSocial"
+                                   formControlName="respostaSocial"/>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-control-label lab" for="field_grauConf">Grau Conforto</label>
+                            <select class="form-control" id="field_grauConf" name="grauConf" formControlName="grauConf">
+                                <option [ngValue]="null"></option>
+                                <option [ngValue]="grauConfOption.id === editForm.get('grauConf').value?.id ? editForm.get('grauConf').value : grauConfOption" *ngFor="let grauConfOption of grauconfs; trackBy: trackGrauConfById">{{grauConfOption.nome}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label lab" for="field_sitProf">Situação Profissional</label>
+                            <select class="form-control" id="field_sitProf" name="sitProf" formControlName="sitProf">
+                                <option [ngValue]="null"></option>
+                                <option [ngValue]="sitProfOption.id === editForm.get('sitProf').value?.id ? editForm.get('sitProf').value : sitProfOption" *ngFor="let sitProfOption of sitprofs; trackBy: trackSitProfById">{{sitProfOption.nome}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <jhi-alert-error></jhi-alert-error>
+            </div>
+            <div>
+                <button style="margin-left: 28vw;" type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Guardar</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

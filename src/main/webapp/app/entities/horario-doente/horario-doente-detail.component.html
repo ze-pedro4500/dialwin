@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="horarioDoente">
+            <h2><span jhiTranslate="dialwinApp.horarioDoente.detail.title">Horario Doente</span> {{horarioDoente.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="dialwinApp.horarioDoente.dia">Dia</span></dt>
+                <dd>
+                    <span>{{horarioDoente.dia}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.horarioDoente.turno">Turno</span></dt>
+                <dd>
+                    <span>{{horarioDoente.turno}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.horarioDoente.sala">Sala</span></dt>
+                <dd>
+                    <span>{{horarioDoente.sala}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.horarioDoente.posto">Posto</span></dt>
+                <dd>
+                    <span>{{horarioDoente.posto}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.horarioDoente.duracao">Duracao</span></dt>
+                <dd>
+                    <span>{{horarioDoente.duracao}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.horarioDoente.doente">Doente</span></dt>
+                <dd>
+                    <div *ngIf="horarioDoente.doente">
+                        <a [routerLink]="['/doente', horarioDoente.doente?.id, 'view']">{{horarioDoente.doente?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/horario-doente', horarioDoente.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

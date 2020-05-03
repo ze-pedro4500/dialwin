@@ -1,0 +1,80 @@
+{
+    "name": "Doente",
+    "fields": [
+        {
+            "fieldName": "situacao",
+            "fieldType": "Situacao",
+            "fieldValues": "StatusPRHD,StatusFalecido,StatusTranspl,StatusRecFam,StatusTransfer,StatusDP,StatusInternado,StatusEmTransito,StatusEmFerias,StatusAlta"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "horarioDoente",
+            "otherEntityRelationshipName": "doente",
+            "relationshipName": "horarioDoente"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "doenteDiagnosticoSocial",
+            "otherEntityRelationshipName": "doente",
+            "relationshipName": "doenteDiagnosticoSocial"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "doenteRegistosIntervencoes",
+            "otherEntityRelationshipName": "doente",
+            "relationshipName": "doenteRegistosIntervencoes"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "doenteHistMovimentos",
+            "otherEntityRelationshipName": "doente",
+            "relationshipName": "doenteHistMovimentos"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "doenteContactosOutros",
+            "otherEntityRelationshipName": "doente",
+            "relationshipName": "doenteContactosOutros"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "doenteIdentidade",
+            "otherEntityRelationshipName": "doente",
+            "relationshipName": "doenteIdentidade",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "doenteContactos",
+            "otherEntityRelationshipName": "doente",
+            "relationshipName": "doenteContactos",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "doenteSocioFamiliar",
+            "otherEntityRelationshipName": "doente",
+            "relationshipName": "doenteSocioFamiliar",
+            "ownerSide": false
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "turnos",
+            "otherEntityRelationshipName": "doente",
+            "relationshipName": "turnos",
+            "otherEntityField": "nome"
+        }
+    ],
+    "changelogDate": "20200111000230",
+    "entityTableName": "doente",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

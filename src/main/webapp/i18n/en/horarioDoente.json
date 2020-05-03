@@ -1,0 +1,27 @@
+{
+  "dialwinApp": {
+    "horarioDoente": {
+      "home": {
+        "title": "Horario Doentes",
+        "createLabel": "Create a new Horario Doente",
+        "createOrEditLabel": "Create or edit a Horario Doente",
+        "notFound": "No Horario Doentes found"
+      },
+      "created": "A new Horario Doente is created with identifier {{ param }}",
+      "updated": "A Horario Doente is updated with identifier {{ param }}",
+      "deleted": "A Horario Doente is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Horario Doente {{ id }}?"
+      },
+      "detail": {
+        "title": "Horario Doente"
+      },
+      "dia": "Dia",
+      "turno": "Turno",
+      "sala": "Sala",
+      "posto": "Posto",
+      "duracao": "Duracao",
+      "doente": "Doente"
+    }
+  }
+}

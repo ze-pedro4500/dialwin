@@ -1,0 +1,30 @@
+{
+    "name": "Pais",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sigla",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "doenteIdentidade",
+            "otherEntityRelationshipName": "pais"
+        }
+    ],
+    "changelogDate": "20200111000232",
+    "entityTableName": "pais",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

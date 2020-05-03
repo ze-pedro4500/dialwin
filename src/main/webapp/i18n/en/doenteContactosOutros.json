@@ -1,0 +1,29 @@
+{
+  "dialwinApp": {
+    "doenteContactosOutros": {
+      "home": {
+        "title": "Doente Contactos Outros",
+        "createLabel": "Create a new Doente Contactos Outros",
+        "createOrEditLabel": "Create or edit a Doente Contactos Outros",
+        "notFound": "No Doente Contactos Outros found"
+      },
+      "created": "A new Doente Contactos Outros is created with identifier {{ param }}",
+      "updated": "A Doente Contactos Outros is updated with identifier {{ param }}",
+      "deleted": "A Doente Contactos Outros is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Doente Contactos Outros {{ id }}?"
+      },
+      "detail": {
+        "title": "Doente Contactos Outros"
+      },
+      "nome": "Nome",
+      "parentesco": "Parentesco",
+      "coabita": "Coabita",
+      "telef": "Telef",
+      "ocupacao": "Ocupacao",
+      "obs": "Obs",
+      "preferencial": "Preferencial",
+      "doente": "Doente"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+<div *ngIf="selectDoente">
+<h2 style="font-size: 2vw;" id="titulo">Seletor de doentes</h2>
+<br>
+<br>
+<div class="ctn container">
+<div class="rou row">
+<div style="margin-right:-2vw" class="col-3">
+<label>Situação</label>
+<input list="situacoes" name="situacao" [(ngModel)]="situacao">
+<datalist id="situacoes">
+    <option value="StatusPRHD">
+    <option value="StatusFalecido">
+    <option value="StatusTranspl">
+    <option value="StatusRecFam">
+    <option value="StatusTransfer">
+    <option value="StatusDP">
+    <option value="StatusInternado">
+    <option value="StatusemTransito">
+    <option value="StatusEmFerias">
+    <option value="StatusAlta">
+  </datalist>
+</div>
+<div style="display: flex;" class="col-3">
+<label>SubSistema</label>
+<input style="height:59%;margin-top: 3%;margin-left: 2%;" list="subSistemas" name="sub" [(ngModel)]="sub">
+<datalist id="subSistemas">
+    <option *ngFor="let subSistemas of subSistemas ;trackBy: trackId" value={{subSistemas.gidNome}}>
+</datalist>
+</div>
+<div class="col-3">
+<label>Turno</label>
+<input style="height:65%" list="turnos" name="turno" [(ngModel)]="turno">
+<datalist id="turnos">
+    <option>Turno atual</option>
+    <option *ngFor="let turno of turnos ;trackBy: trackId" value={{turno.nome}}>
+</datalist>
+</div>
+<div class="col-3 bp">
+    <button (click)="loadDo(situacao,sub,turno)" class="btn btn-primary" id="bt">Pesquisar</button>
+</div>
+</div>
+
+<br>
+<div id="doentes">
+<h4 class="item" *ngFor="let doenteIdentidade of doenteIdentidades" (click)="logar(doenteIdentidade)">{{doenteIdentidade.nome}}</h4>
+</div>
+</div>

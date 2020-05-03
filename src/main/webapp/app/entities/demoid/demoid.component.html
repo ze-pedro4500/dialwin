@@ -1,0 +1,152 @@
+<div *ngIf="identidade">
+    <div class="col-8" style="margin: auto;">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label class="form-control-label lab" for="field_nome">Nome</label>
+                            <input type="text" class="form-control" name="nome" id="field_nome"
+                                   formControlName="nome"/>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                            <label class="form-control-label lab" for="field_altura">Altura</label>
+                            <input type="number" class="form-control" name="altura" id="field_altura"
+                                   formControlName="altura"/>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group">
+                            <label class="form-control-label lab" for="field_dataNasc">Data Nascimento</label>
+                            <div class="input-group">
+                                <input id="field_dataNasc" type="text" class="form-control" name="dataNasc" ngbDatepicker  #dataNascDp="ngbDatepicker" formControlName="dataNasc"/>
+                                <span class="input-group-append">
+                                    <button type="button" class="btn btn-secondary" (click)="dataNascDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                                </span>
+                            </div>
+                        </div>
+                </div>
+                </div>
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="form-group">
+                                <label class="form-control-label lab" for="field_morada">Morada</label>
+                                <input type="text" class="form-control" name="morada" id="field_morada"
+                                       formControlName="morada"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label lab"  for="field_freguesia">Freguesia</label>
+                                <input type="text" class="form-control" name="freguesia" id="field_freguesia"
+                                       formControlName="freguesia"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label lab"  for="field_medFam">Medico de Familia</label>
+                                <input type="text" class="form-control" name="medFam" id="field_medFam"
+                                       formControlName="medFam"/>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group">
+                                <label class="form-control-label lab"  for="field_codPost">Codigo Postal</label>
+                                <input type="text" class="form-control" name="codPost" id="field_codPost"
+                                       formControlName="codPost"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-control-label lab" for="field_nif">NIF</label>
+                                <input type="number" class="form-control" name="nif" id="field_nif"
+                                       formControlName="nif"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label lab"  for="field_sexo">Sexo</label>
+                                <select class="form-control" name="sexo" formControlName="sexo" id="field_sexo">
+                                    <option value="Masculino">{{'dialwinApp.Sexo.Masculino' | translate}}</option>
+                                    <option value="Feminino">{{'dialwinApp.Sexo.Feminino' | translate}}</option>
+                                </select>
+                            </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label class="form-control-label lab" for="field_telef">Telefone</label>
+                            <input type="number" class="form-control" name="telef" id="field_telef"
+                                   formControlName="telef"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label lab" for="field_nBenef">Nº Benef</label>
+                            <input type="number" class="form-control" name="nBenef" id="field_nBenef"
+                                   formControlName="nBenef"/>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label class="form-control-label lab"  for="field_telef2">Telemovel</label>
+                            <input type="number" class="form-control" name="telef2" id="field_telef2"
+                                   formControlName="telef2"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label lab" for="field_nUtente">Nº Utente</label>
+                            <input type="number" class="form-control" name="nUtente" id="field_nUtente"
+                                   formControlName="nUtente"/>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label class="form-control-label lab" for="field_docId">Doc Id</label>
+                            <input type="number" class="form-control" name="docId" id="field_docId"
+                                   formControlName="docId"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label lab"  for="field_numProcHosp">Número de Processo Hospitalar</label>
+                            <input type="number" class="form-control" name="numProcHosp" id="field_numProcHosp"
+                                   formControlName="numProcHosp"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label class="form-control-label lab"  for="field_subsistemas">Sub Sistema</label>
+                            <select class="form-control" id="field_subsistemas" name="subsistemas" formControlName="subsistemas">
+                                <option [ngValue]="null"></option>
+                                <option [ngValue]="subSistemasOption.id === editForm.get('subsistemas').value?.id ? editForm.get('subsistemas').value : subSistemasOption" *ngFor="let subSistemasOption of subsistemas; trackBy: trackSubSistemasById">{{subSistemasOption.gidNome}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label lab"  for="field_aCES">ACES</label>
+                            <select class="form-control" id="field_aCES" name="aCES" formControlName="aCES">
+                                <option [ngValue]="null"></option>
+                                <option [ngValue]="aCESOption.id === editForm.get('aCES').value?.id ? editForm.get('aCES').value : aCESOption" *ngFor="let aCESOption of aces; trackBy: trackACESById">{{aCESOption.nome}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label class="form-control-label lab" for="field_centroSaude">Centro Saude</label>
+                            <select class="form-control" id="field_centroSaude" name="centroSaude" formControlName="centroSaude">
+                                <option [ngValue]="null"></option>
+                                <option [ngValue]="centroSaudeOption.id === editForm.get('centroSaude').value?.id ? editForm.get('centroSaude').value : centroSaudeOption" *ngFor="let centroSaudeOption of centrosaudes; trackBy: trackCentroSaudeById">{{centroSaudeOption.nome}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label lab"  for="field_hospRef">Hospital de Referencia</label>
+                            <select class="form-control" id="field_hospRef" name="hospRef" formControlName="hospRef">
+                                <option [ngValue]="null"></option>
+                                <option [ngValue]="hospRefOption.id === editForm.get('hospRef').value?.id ? editForm.get('hospRef').value : hospRefOption" *ngFor="let hospRefOption of hosprefs; trackBy: trackHospRefById">{{hospRefOption.nome}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <jhi-alert-error></jhi-alert-error>
+            </div>
+            <div>
+                <button style="margin-left: 27vw;" type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Guardar</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

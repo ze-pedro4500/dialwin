@@ -1,0 +1,23 @@
+{
+  "dialwinApp": {
+    "subSisGrupo": {
+      "home": {
+        "title": "Sub Sis Grupos",
+        "createLabel": "Create a new Sub Sis Grupo",
+        "createOrEditLabel": "Create or edit a Sub Sis Grupo",
+        "notFound": "No Sub Sis Grupos found"
+      },
+      "created": "A new Sub Sis Grupo is created with identifier {{ param }}",
+      "updated": "A Sub Sis Grupo is updated with identifier {{ param }}",
+      "deleted": "A Sub Sis Grupo is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sub Sis Grupo {{ id }}?"
+      },
+      "detail": {
+        "title": "Sub Sis Grupo"
+      },
+      "gidDesigna": "Gid Designa",
+      "gidGrupo": "Gid Grupo"
+    }
+  }
+}

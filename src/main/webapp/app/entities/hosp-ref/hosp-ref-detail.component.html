@@ -1,0 +1,27 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="hospRef">
+            <h2><span jhiTranslate="dialwinApp.hospRef.detail.title">Hosp Ref</span> {{hospRef.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="dialwinApp.hospRef.nome">Nome</span></dt>
+                <dd>
+                    <span>{{hospRef.nome}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/hosp-ref', hospRef.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

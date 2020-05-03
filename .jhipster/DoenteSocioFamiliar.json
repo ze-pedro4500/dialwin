@@ -1,0 +1,94 @@
+{
+    "name": "DoenteSocioFamiliar",
+    "fields": [
+        {
+            "fieldName": "habilitacoes",
+            "fieldType": "Habilitacoes",
+            "fieldValues": "Iletrado,LeEscreve,EnsinoBasico,NonoAno,DecimoSegundoAno,CursoTecnico,Cursosuperior"
+        },
+        {
+            "fieldName": "estCivil",
+            "fieldType": "EstCivil",
+            "fieldValues": "Solteiro,Casado"
+        },
+        {
+            "fieldName": "conjugeNome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "conjugeProf",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "activTempLiv",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "habitacaoObs",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "grauConfortoObs",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "respostaSocial",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "doente",
+            "otherEntityRelationshipName": "doenteSocioFamiliar",
+            "relationshipName": "doente",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "vitalidade",
+            "otherEntityRelationshipName": "doenteSocioFamiliar",
+            "relationshipName": "vitalidade",
+            "otherEntityField": "percentagem"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "habit",
+            "otherEntityRelationshipName": "doenteSocioFamiliar",
+            "relationshipName": "habit",
+            "otherEntityField": "nome"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "grauConf",
+            "otherEntityRelationshipName": "doenteSocioFamiliar",
+            "relationshipName": "grauConf",
+            "otherEntityField": "nome"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "profissao",
+            "otherEntityRelationshipName": "doenteSocioFamiliar",
+            "relationshipName": "profissao",
+            "otherEntityField": "nome"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "sitProf",
+            "otherEntityRelationshipName": "doenteSocioFamiliar",
+            "relationshipName": "sitProf",
+            "otherEntityField": "nome"
+        }
+    ],
+    "changelogDate": "20200111000237",
+    "entityTableName": "doente_socio_familiar",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,24 @@
+{
+  "dialwinApp": {
+    "doenteContactos": {
+      "home": {
+        "title": "Doente Contactos",
+        "createLabel": "Create a new Doente Contactos",
+        "createOrEditLabel": "Create or edit a Doente Contactos",
+        "notFound": "No Doente Contactos found"
+      },
+      "created": "A new Doente Contactos is created with identifier {{ param }}",
+      "updated": "A Doente Contactos is updated with identifier {{ param }}",
+      "deleted": "A Doente Contactos is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Doente Contactos {{ id }}?"
+      },
+      "detail": {
+        "title": "Doente Contactos"
+      },
+      "transportador": "Transportador",
+      "telefTransp": "Telef Transp",
+      "doente": "Doente"
+    }
+  }
+}

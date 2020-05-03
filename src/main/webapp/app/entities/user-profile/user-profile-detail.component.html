@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="userProfile">
+            <h2><span jhiTranslate="dialwinApp.userProfile.detail.title">User Profile</span> {{userProfile.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="dialwinApp.userProfile.nome">Nome</span></dt>
+                <dd>
+                    <span>{{userProfile.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.userProfile.demograf">Demograf</span></dt>
+                <dd>
+                    <span>{{userProfile.demograf}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.userProfile.social">Social</span></dt>
+                <dd>
+                    <span>{{userProfile.social}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.userProfile.procClin">Proc Clin</span></dt>
+                <dd>
+                    <span>{{userProfile.procClin}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.userProfile.dialEnf">Dial Enf</span></dt>
+                <dd>
+                    <span>{{userProfile.dialEnf}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.userProfile.dialStat">Dial Stat</span></dt>
+                <dd>
+                    <span>{{userProfile.dialStat}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.userProfile.qualiStat">Quali Stat</span></dt>
+                <dd>
+                    <span>{{userProfile.qualiStat}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.userProfile.labLink">Lab Link</span></dt>
+                <dd>
+                    <span>{{userProfile.labLink}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.userProfile.gidLink">Gid Link</span></dt>
+                <dd>
+                    <span>{{userProfile.gidLink}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.userProfile.asterixFarma">Asterix Farma</span></dt>
+                <dd>
+                    <span>{{userProfile.asterixFarma}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.userProfile.asterixGabMed">Asterix Gab Med</span></dt>
+                <dd>
+                    <span>{{userProfile.asterixGabMed}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/user-profile', userProfile.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

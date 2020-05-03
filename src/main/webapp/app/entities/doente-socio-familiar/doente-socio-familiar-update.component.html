@@ -1,0 +1,115 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-doente-socio-familiar-heading" jhiTranslate="dialwinApp.doenteSocioFamiliar.home.createOrEditLabel">Create or edit a Doente Socio Familiar</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.habilitacoes" for="field_habilitacoes">Habilitacoes</label>
+                    <select class="form-control" name="habilitacoes" formControlName="habilitacoes" id="field_habilitacoes">
+                        <option value="Iletrado">{{'dialwinApp.Habilitacoes.Iletrado' | translate}}</option>
+                        <option value="LeEscreve">{{'dialwinApp.Habilitacoes.LeEscreve' | translate}}</option>
+                        <option value="EnsinoBasico">{{'dialwinApp.Habilitacoes.EnsinoBasico' | translate}}</option>
+                        <option value="NonoAno">{{'dialwinApp.Habilitacoes.NonoAno' | translate}}</option>
+                        <option value="DecimoSegundoAno">{{'dialwinApp.Habilitacoes.DecimoSegundoAno' | translate}}</option>
+                        <option value="CursoTecnico">{{'dialwinApp.Habilitacoes.CursoTecnico' | translate}}</option>
+                        <option value="Cursosuperior">{{'dialwinApp.Habilitacoes.Cursosuperior' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.estCivil" for="field_estCivil">Est Civil</label>
+                    <select class="form-control" name="estCivil" formControlName="estCivil" id="field_estCivil">
+                        <option value="Solteiro">{{'dialwinApp.EstCivil.Solteiro' | translate}}</option>
+                        <option value="Casado">{{'dialwinApp.EstCivil.Casado' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.conjugeNome" for="field_conjugeNome">Conjuge Nome</label>
+                    <input type="text" class="form-control" name="conjugeNome" id="field_conjugeNome"
+                           formControlName="conjugeNome"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.conjugeProf" for="field_conjugeProf">Conjuge Prof</label>
+                    <input type="text" class="form-control" name="conjugeProf" id="field_conjugeProf"
+                           formControlName="conjugeProf"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.activTempLiv" for="field_activTempLiv">Activ Temp Liv</label>
+                    <input type="text" class="form-control" name="activTempLiv" id="field_activTempLiv"
+                           formControlName="activTempLiv"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.habitacaoObs" for="field_habitacaoObs">Habitacao Obs</label>
+                    <input type="text" class="form-control" name="habitacaoObs" id="field_habitacaoObs"
+                           formControlName="habitacaoObs"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.grauConfortoObs" for="field_grauConfortoObs">Grau Conforto Obs</label>
+                    <input type="text" class="form-control" name="grauConfortoObs" id="field_grauConfortoObs"
+                           formControlName="grauConfortoObs"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.respostaSocial" for="field_respostaSocial">Resposta Social</label>
+                    <input type="text" class="form-control" name="respostaSocial" id="field_respostaSocial"
+                           formControlName="respostaSocial"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.doente" for="field_doente">Doente</label>
+                    <select class="form-control" id="field_doente" name="doente" formControlName="doente">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="doenteOption.id === editForm.get('doente').value?.id ? editForm.get('doente').value : doenteOption" *ngFor="let doenteOption of doentes; trackBy: trackDoenteById">{{doenteOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.vitalidade" for="field_vitalidade">Vitalidade</label>
+                    <select class="form-control" id="field_vitalidade" name="vitalidade" formControlName="vitalidade">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="vitalidadeOption.id === editForm.get('vitalidade').value?.id ? editForm.get('vitalidade').value : vitalidadeOption" *ngFor="let vitalidadeOption of vitalidades; trackBy: trackVitalidadeById">{{vitalidadeOption.percentagem}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.habit" for="field_habit">Habit</label>
+                    <select class="form-control" id="field_habit" name="habit" formControlName="habit">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="habitOption.id === editForm.get('habit').value?.id ? editForm.get('habit').value : habitOption" *ngFor="let habitOption of habits; trackBy: trackHabitById">{{habitOption.nome}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.grauConf" for="field_grauConf">Grau Conf</label>
+                    <select class="form-control" id="field_grauConf" name="grauConf" formControlName="grauConf">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="grauConfOption.id === editForm.get('grauConf').value?.id ? editForm.get('grauConf').value : grauConfOption" *ngFor="let grauConfOption of grauconfs; trackBy: trackGrauConfById">{{grauConfOption.nome}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.profissao" for="field_profissao">Profissao</label>
+                    <select class="form-control" id="field_profissao" name="profissao" formControlName="profissao">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="profissaoOption.id === editForm.get('profissao').value?.id ? editForm.get('profissao').value : profissaoOption" *ngFor="let profissaoOption of profissaos; trackBy: trackProfissaoById">{{profissaoOption.nome}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.doenteSocioFamiliar.sitProf" for="field_sitProf">Sit Prof</label>
+                    <select class="form-control" id="field_sitProf" name="sitProf" formControlName="sitProf">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="sitProfOption.id === editForm.get('sitProf').value?.id ? editForm.get('sitProf').value : sitProfOption" *ngFor="let sitProfOption of sitprofs; trackBy: trackSitProfById">{{sitProfOption.nome}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

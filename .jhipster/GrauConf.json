@@ -1,0 +1,27 @@
+{
+    "name": "GrauConf",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "doenteSocioFamiliar",
+            "otherEntityRelationshipName": "grauConf",
+            "relationshipName": "doenteSocioFamiliar"
+        }
+    ],
+    "changelogDate": "20200111000248",
+    "entityTableName": "grau_conf",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,71 @@
+<div *ngIf="perfilSocial">
+    <div *ngIf="!newRegisto">
+    <div class="row justify-content-center">
+    <div class="col-6">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group">
+                    <label style="margin-bottom: 1vw;" class="lab form-control-label" for="field_descr">Diagnóstico Social</label>
+                    <textarea rows=10 formControlName="descr" class="item form-control"></textarea>
+                </div>
+            <div>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="but btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Guardar</span>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="col-6">
+        <h2 id="page-heading">
+            <label class="lab form-control-label" for="field_descr">Registo de Intervenções</label>
+            <button (click)="addRegisto()" id="jh-create-entity" class="but btn btn-primary float-right jh-create-entity create-doente-registos-intervencoes">
+                <fa-icon [icon]="'plus'"></fa-icon>
+                <span>
+                Adicionar
+                </span>
+            </button>
+        </h2>
+    
+        <div class="alert alert-warning" *ngIf="doenteRegistosIntervencoes?.length === 0">
+            <span jhiTranslate="dialwinApp.doenteRegistosIntervencoes.home.notFound">No doenteRegistosIntervencoes found</span>
+        </div>
+        <div class="table-responsive" *ngIf="doenteRegistosIntervencoes?.length > 0">
+            <table class="table table-striped" aria-describedby="page-heading">
+                <tbody>
+                <tr *ngFor="let dare of dataRegistos">
+                    <td class="item">{{dare.data[0].data}}</td>
+                    <td class="item">{{dare.reg.descr}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+<div *ngIf="newRegisto">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <form name="editForm2" role="form" novalidate (ngSubmit)="save2()" [formGroup]="editForm2">
+                <h2 id="jhi-doente-registos-intervencoes-heading" style="margin-left: 26rem;">Adicionar Intervenção</h2>
+                <div>
+                    <jhi-alert-error></jhi-alert-error>
+                    <div class="form-group">
+                        <label class="lab form-control-label" for="field_descr">Descrição</label>
+                        <input type="text" class="form-control" name="descr" id="field_descr"
+                               formControlName="descr"/>
+                    </div>
+                </div>
+                <div>
+                    <button (click)="cancel()" type="button" id="cancel-save" class="btn btn-secondary"  >
+                        <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancelar</span>
+                    </button>
+                    <button  type="submit" id="save-entity" [disabled]="editForm2.invalid || isSaving" class="btn btn-primary">
+                        <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Guardar</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

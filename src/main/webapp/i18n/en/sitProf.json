@@ -1,0 +1,23 @@
+{
+  "dialwinApp": {
+    "sitProf": {
+      "home": {
+        "title": "Sit Profs",
+        "createLabel": "Create a new Sit Prof",
+        "createOrEditLabel": "Create or edit a Sit Prof",
+        "notFound": "No Sit Profs found"
+      },
+      "created": "A new Sit Prof is created with identifier {{ param }}",
+      "updated": "A Sit Prof is updated with identifier {{ param }}",
+      "deleted": "A Sit Prof is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sit Prof {{ id }}?"
+      },
+      "detail": {
+        "title": "Sit Prof"
+      },
+      "nome": "Nome",
+      "doenteSocioFamiliar": "Doente Socio Familiar"
+    }
+  }
+}

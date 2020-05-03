@@ -1,0 +1,90 @@
+<div *ngIf="horario">
+    <div *ngIf="!newHorario">
+    <h2 id="page-heading">
+        <button (click)="addHorario()" id="jh-create-entity" class="but btn btn-primary float-right jh-create-entity create-horario-doente">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Adicionar
+            </span>
+        </button>
+    </h2>
+    <br/>
+    <div class="table-responsive" *ngIf="horarioDoentes?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span class="item">Dia</span></th>
+            <th scope="col" ><span class="item">Turno</span></th>
+            <th scope="col" ><span class="item">Sala</span></th>
+            <th scope="col" ><span class="item">Posto</span></th>
+            <th scope="col" ><span class="item">Duração</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let horarioDoente of horarioDoentes ;trackBy: trackId">
+                <td class="item">{{horarioDoente.dia}}</td>
+                <td class="item" >{{horarioDoente.turno}}</td>
+                <td class="item">{{horarioDoente.sala}}</td>
+                <td class="item">{{horarioDoente.posto}}</td>
+                <td class="item">{{horarioDoente.duracao}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit" (click)="delete(horarioDoente)"
+                                class="rem btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Remover</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div *ngIf="newHorario">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+                <h2 id="jhi-horario-doente-heading" style="text-align: center;">Adicionar Horário</h2>
+                <div>
+                    <jhi-alert-error></jhi-alert-error>
+                    <div class="form-group">
+                        <label class="lab form-control-label" jhiTranslate="dialwinApp.horarioDoente.dia" for="field_dia">Dia</label>
+                        <input type="text" class="form-control" name="dia" id="field_dia"
+                               formControlName="dia"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="lab form-control-label" jhiTranslate="dialwinApp.horarioDoente.turno" for="field_turno">Turno</label>
+                        <input type="text" class="form-control" name="turno" id="field_turno"
+                               formControlName="turno"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="lab form-control-label" jhiTranslate="dialwinApp.horarioDoente.sala" for="field_sala">Sala</label>
+                        <input type="number" class="form-control" name="sala" id="field_sala"
+                               formControlName="sala"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="lab form-control-label" jhiTranslate="dialwinApp.horarioDoente.posto" for="field_posto">Posto</label>
+                        <input type="text" class="form-control" name="posto" id="field_posto"
+                               formControlName="posto"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="lab form-control-label" jhiTranslate="dialwinApp.horarioDoente.duracao" for="field_duracao">Duracao</label>
+                        <input type="number" class="form-control" name="duracao" id="field_duracao"
+                               formControlName="duracao"/>
+                    </div>
+                </div>
+                <div>
+                    <button (click)="cancel()" type="button" id="cancel-save" class="but btn btn-secondary" >
+                        <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancelar</span>
+                    </button>
+                    <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="but btn btn-primary">
+                        <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Guardar</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

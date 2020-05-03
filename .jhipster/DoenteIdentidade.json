@@ -1,0 +1,120 @@
+{
+    "name": "DoenteIdentidade",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataNasc",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "altura",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "morada",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codPost",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "freguesia",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nif",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "medFam",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sexo",
+            "fieldType": "Sexo",
+            "fieldValues": "Masculino,Feminino"
+        },
+        {
+            "fieldName": "telef",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "telef2",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "docId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nBenef",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nUtente",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "numProcHosp",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "doente",
+            "otherEntityRelationshipName": "doenteIdentidade",
+            "relationshipName": "doente",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "subSistemas",
+            "otherEntityRelationshipName": "doenteIdentidade",
+            "relationshipName": "subsistemas",
+            "otherEntityField": "gidNome"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "centroSaude",
+            "otherEntityRelationshipName": "doenteIdentidade",
+            "relationshipName": "centroSaude",
+            "otherEntityField": "nome"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "aCES",
+            "otherEntityRelationshipName": "doenteIdentidade",
+            "relationshipName": "aCES",
+            "otherEntityField": "nome"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "hospRef",
+            "otherEntityRelationshipName": "doenteIdentidade",
+            "relationshipName": "hospRef",
+            "otherEntityField": "nome"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "pais",
+            "otherEntityRelationshipName": "doenteIdentidade",
+            "relationshipName": "pais"
+        }
+    ],
+    "changelogDate": "20200111000231",
+    "entityTableName": "doente_identidade",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

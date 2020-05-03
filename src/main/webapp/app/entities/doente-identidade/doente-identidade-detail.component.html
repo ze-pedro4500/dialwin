@@ -1,0 +1,113 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="doenteIdentidade">
+            <h2><span jhiTranslate="dialwinApp.doenteIdentidade.detail.title">Doente Identidade</span> {{doenteIdentidade.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="dialwinApp.doenteIdentidade.nome">Nome</span></dt>
+                <dd>
+                    <span>{{doenteIdentidade.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteIdentidade.dataNasc">Data Nasc</span></dt>
+                <dd>
+                    <span>{{doenteIdentidade.dataNasc}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteIdentidade.altura">Altura</span></dt>
+                <dd>
+                    <span>{{doenteIdentidade.altura}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteIdentidade.morada">Morada</span></dt>
+                <dd>
+                    <span>{{doenteIdentidade.morada}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteIdentidade.codPost">Cod Post</span></dt>
+                <dd>
+                    <span>{{doenteIdentidade.codPost}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteIdentidade.freguesia">Freguesia</span></dt>
+                <dd>
+                    <span>{{doenteIdentidade.freguesia}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteIdentidade.nif">Nif</span></dt>
+                <dd>
+                    <span>{{doenteIdentidade.nif}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteIdentidade.medFam">Med Fam</span></dt>
+                <dd>
+                    <span>{{doenteIdentidade.medFam}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteIdentidade.sexo">Sexo</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'dialwinApp.Sexo.' + doenteIdentidade.sexo}}">{{doenteIdentidade.sexo}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteIdentidade.telef">Telef</span></dt>
+                <dd>
+                    <span>{{doenteIdentidade.telef}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteIdentidade.telef2">Telef 2</span></dt>
+                <dd>
+                    <span>{{doenteIdentidade.telef2}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteIdentidade.docId">Doc Id</span></dt>
+                <dd>
+                    <span>{{doenteIdentidade.docId}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteIdentidade.nBenef">N Benef</span></dt>
+                <dd>
+                    <span>{{doenteIdentidade.nBenef}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteIdentidade.nUtente">N Utente</span></dt>
+                <dd>
+                    <span>{{doenteIdentidade.nUtente}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteIdentidade.numProcHosp">Num Proc Hosp</span></dt>
+                <dd>
+                    <span>{{doenteIdentidade.numProcHosp}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteIdentidade.doente">Doente</span></dt>
+                <dd>
+                    <div *ngIf="doenteIdentidade.doente">
+                        <a [routerLink]="['/doente', doenteIdentidade.doente?.id, 'view']">{{doenteIdentidade.doente?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteIdentidade.subsistemas">Subsistemas</span></dt>
+                <dd>
+                    <div *ngIf="doenteIdentidade.subsistemas">
+                        <a [routerLink]="['/sub-sistemas', doenteIdentidade.subsistemas?.id, 'view']">{{doenteIdentidade.subsistemas?.gidNome}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteIdentidade.centroSaude">Centro Saude</span></dt>
+                <dd>
+                    <div *ngIf="doenteIdentidade.centroSaude">
+                        <a [routerLink]="['/centro-saude', doenteIdentidade.centroSaude?.id, 'view']">{{doenteIdentidade.centroSaude?.nome}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteIdentidade.aCES">A CES</span></dt>
+                <dd>
+                    <div *ngIf="doenteIdentidade.aCES">
+                        <a [routerLink]="['/aces', doenteIdentidade.aCES?.id, 'view']">{{doenteIdentidade.aCES?.nome}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteIdentidade.hospRef">Hosp Ref</span></dt>
+                <dd>
+                    <div *ngIf="doenteIdentidade.hospRef">
+                        <a [routerLink]="['/hosp-ref', doenteIdentidade.hospRef?.id, 'view']">{{doenteIdentidade.hospRef?.nome}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/doente-identidade', doenteIdentidade.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="subSisGrupo">
+            <h2><span jhiTranslate="dialwinApp.subSisGrupo.detail.title">Sub Sis Grupo</span> {{subSisGrupo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="dialwinApp.subSisGrupo.gidDesigna">Gid Designa</span></dt>
+                <dd>
+                    <span>{{subSisGrupo.gidDesigna}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.subSisGrupo.gidGrupo">Gid Grupo</span></dt>
+                <dd>
+                    <span>{{subSisGrupo.gidGrupo}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sub-sis-grupo', subSisGrupo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+{
+    "name": "UserPermissions",
+    "fields": [
+        {
+            "fieldName": "demograf",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "social",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "procClin",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dialEnf",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dialStat",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "qualiStat",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "labLink",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "gidLink",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "asterixFarma",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "asterixGabMed",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "userExtra",
+            "otherEntityRelationshipName": "userPermissions",
+            "relationshipName": "userExtra",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200111000251",
+    "entityTableName": "user_permissions",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

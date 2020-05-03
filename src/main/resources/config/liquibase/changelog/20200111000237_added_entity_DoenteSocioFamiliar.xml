@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+        <property name="autoIncrement" value="true"/>
+
+    <!--
+        Added the entity DoenteSocioFamiliar.
+    -->
+    <changeSet id="20200111000237-1" author="jhipster">
+        <createTable tableName="doente_socio_familiar">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="habilitacoes" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="est_civil" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="conjuge_nome" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="conjuge_prof" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="activ_temp_liv" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="habitacao_obs" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="grau_conforto_obs" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="resposta_social" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="doente_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_doente_socio_familiar_doente_id" />
+            </column>
+            <column name="vitalidade_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="habit_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="grau_conf_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="profissao_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="sit_prof_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20200111000237-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20200111000237-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/doente_socio_familiar.csv"
+                  separator=";"
+                  tableName="doente_socio_familiar">
+            <column name="id" type="numeric"/>
+            <column name="habilitacoes" type="string"/>
+            <column name="est_civil" type="string"/>
+            <column name="conjuge_nome" type="string"/>
+            <column name="conjuge_prof" type="string"/>
+            <column name="activ_temp_liv" type="string"/>
+            <column name="habitacao_obs" type="string"/>
+            <column name="grau_conforto_obs" type="string"/>
+            <column name="resposta_social" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

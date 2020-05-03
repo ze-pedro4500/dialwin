@@ -1,0 +1,23 @@
+{
+  "dialwinApp": {
+    "habit": {
+      "home": {
+        "title": "Habits",
+        "createLabel": "Create a new Habit",
+        "createOrEditLabel": "Create or edit a Habit",
+        "notFound": "No Habits found"
+      },
+      "created": "A new Habit is created with identifier {{ param }}",
+      "updated": "A Habit is updated with identifier {{ param }}",
+      "deleted": "A Habit is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Habit {{ id }}?"
+      },
+      "detail": {
+        "title": "Habit"
+      },
+      "nome": "Nome",
+      "doenteSocioFamiliar": "Doente Socio Familiar"
+    }
+  }
+}

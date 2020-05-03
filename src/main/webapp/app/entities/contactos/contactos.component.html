@@ -1,0 +1,139 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css" />
+<div *ngIf="contactos">
+<div *ngIf="!newContacto" class="row justify-content-center">
+    <div class="col-10">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-5">
+                        <div class="form-group">
+                            <label class="form-control-label lab" jhiTranslate="dialwinApp.doenteContactos.transportador" for="field_transportador">Transportador</label>
+                            <input type="text" class="form-control" name="transportador" id="field_transportador"
+                                   formControlName="transportador"/>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="form-group">
+                            <label class="form-control-label lab" jhiTranslate="dialwinApp.doenteContactos.telefTransp" for="field_telefTransp">Telefone Transportador</label>
+                            <input type="number" class="form-control" name="telefTransp" id="field_telefTransp"
+                                   formControlName="telefTransp"/>
+                        </div>
+                    </div>
+                    <div class="col-2" id="bt">
+                        <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                            <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Guardar</span>
+                        </button>
+                    </div>
+                </div>
+                <jhi-alert-error></jhi-alert-error>
+            </div>
+        </form>
+    </div>
+    <div style="width: 90%;">
+        <h2 id="page-heading">
+            
+        </h2>
+        <br/>
+        <div  class="table-responsive" *ngIf="doenteContactosOutros?.length > 0">
+            <table class="table table-striped" aria-describedby="page-heading">
+                <thead>
+                <tr>
+                <th class="lab" scope="col" ><span>Nome</span></th>
+                <th class="lab" scope="col" ><span>Parentesco</span></th>
+                <th class="lab" scope="col" ><span>Coabita</span></th>
+                <th class="lab" scope="col" ><span>Telefone</span></th>
+                <th class="lab" scope="col" ><span>Ocupação</span></th>
+                <th class="lab" scope="col" ><span>Preferencial</span></th>
+                <th class="lab" scope="col" ><span>Observações</span></th>
+                
+                <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let doenteContactosOutros of doenteContactosOutros ;trackBy: trackId">
+                    <td class="item">{{doenteContactosOutros.nome}}</td>
+                    <td class="item">{{doenteContactosOutros.parentesco}}</td>
+                    <td class="item">{{doenteContactosOutros.coabita}}</td>
+                    <td class="item">{{doenteContactosOutros.telef}}</td>
+                    <td class="item">{{doenteContactosOutros.ocupacao}}</td>
+                    <td class="item">{{doenteContactosOutros.preferencial}}</td>
+                    <td class="item">{{doenteContactosOutros.obs}}</td>
+                    
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button (click)="delete(doenteContactosOutros)"
+                                    class="rem btn btn-danger btn-sm">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                                <span class="d-none d-md-inline">Remover</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <button *ngIf="!newContacto" id="jh-create-entity" class="but btn btn-primary float-right jh-create-entity create-doente-contactos-outros" (click)="addContacto()">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span>
+            Adicionar
+            </span>
+        </button>
+    </div>
+</div>
+    <div *ngIf="newContacto">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <form name="editForm2" role="form" novalidate (ngSubmit)="save2()" [formGroup]="editForm2">
+                    <h2 id="jhi-doente-contactos-outros-heading" style="margin-left: 27rem;">Adicionar Contacto</h2>
+                    <div>
+                        <div class="form-group">
+                            <label class="form-control-label lab" jhiTranslate="dialwinApp.doenteContactosOutros.nome" for="field_nome">Nome</label>
+                            <input type="text" class="form-control" name="nome" id="field_nome"
+                                   formControlName="nome"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label lab" jhiTranslate="dialwinApp.doenteContactosOutros.parentesco" for="field_parentesco">Parentesco</label>
+                            <input type="text" class="form-control" name="parentesco" id="field_parentesco"
+                                   formControlName="parentesco"/>
+                        </div>
+                        <div class="form-group" style="width: 3%;">
+                            <label class="form-control-label lab" jhiTranslate="dialwinApp.doenteContactosOutros.coabita" for="field_coabita">Coabita</label>
+                            <input type="checkbox" class="form-control" name="coabita" id="field_coabita"
+                                   formControlName="coabita"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label lab"  for="field_telef">Telefone</label>
+                            <input type="number" class="form-control" name="telef" id="field_telef"
+                                   formControlName="telef"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label lab" for="field_ocupacao">Ocupação</label>
+                            <input type="text" class="form-control" name="ocupacao" id="field_ocupacao"
+                                   formControlName="ocupacao"/>
+                        </div>
+                        
+                        <div class="form-group" style="width: 3%;">
+                            <label class="form-control-label lab" jhiTranslate="dialwinApp.doenteContactosOutros.preferencial" for="field_preferencial">Preferencial</label>
+                            <input type="checkbox" class="form-control" name="preferencial" id="field_preferencial"
+                                   formControlName="preferencial"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label lab" for="field_obs">Observações</label>
+                            <input type="text" class="form-control" name="obs" id="field_obs"
+                                   formControlName="obs"/>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="cancel()">
+                            <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancelar</span>
+                        </button>
+                        <button type="submit" id="save-entity" [disabled]="editForm2.invalid || isSaving" class="btn btn-primary">
+                            <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Aceitar</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</div>

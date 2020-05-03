@@ -1,0 +1,14 @@
+{
+  "dialwinApp": {
+    "Habilitacoes": {
+      "null": "",
+      "Iletrado": "Iletrado",
+      "LeEscreve": "LeEscreve",
+      "EnsinoBasico": "EnsinoBasico",
+      "NonoAno": "NonoAno",
+      "DecimoSegundoAno": "DecimoSegundoAno",
+      "CursoTecnico": "CursoTecnico",
+      "Cursosuperior": "Cursosuperior"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+    "name": "SubSistemas",
+    "fields": [
+        {
+            "fieldName": "gidNome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gidCode",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "subSisGrupo",
+            "otherEntityRelationshipName": "subSistemas",
+            "relationshipName": "subSisGrupo",
+            "otherEntityField": "gidDesigna"
+        }
+    ],
+    "changelogDate": "20200111000242",
+    "entityTableName": "sub_sistemas",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

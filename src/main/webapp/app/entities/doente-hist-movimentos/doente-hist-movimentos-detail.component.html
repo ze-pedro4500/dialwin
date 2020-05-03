@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="doenteHistMovimentos">
+            <h2><span jhiTranslate="dialwinApp.doenteHistMovimentos.detail.title">Doente Hist Movimentos</span> {{doenteHistMovimentos.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="dialwinApp.doenteHistMovimentos.data">Data</span></dt>
+                <dd>
+                    <span>{{doenteHistMovimentos.data}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteHistMovimentos.situacao">Situacao</span></dt>
+                <dd>
+                    <span>{{doenteHistMovimentos.situacao}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteHistMovimentos.obs">Obs</span></dt>
+                <dd>
+                    <span>{{doenteHistMovimentos.obs}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteHistMovimentos.doente">Doente</span></dt>
+                <dd>
+                    <div *ngIf="doenteHistMovimentos.doente">
+                        <a [routerLink]="['/doente', doenteHistMovimentos.doente?.id, 'view']">{{doenteHistMovimentos.doente?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/doente-hist-movimentos', doenteHistMovimentos.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "registo",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "data",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20200427112203",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "serviceClass",
+    "entityTableName": "registo_data",
+    "databaseType": "sql",
+    "readOnly": false,
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

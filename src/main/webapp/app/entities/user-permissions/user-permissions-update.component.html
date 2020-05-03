@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-user-permissions-heading" jhiTranslate="dialwinApp.userPermissions.home.createOrEditLabel">Create or edit a User Permissions</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.userPermissions.demograf" for="field_demograf">Demograf</label>
+                    <input type="number" class="form-control" name="demograf" id="field_demograf"
+                           formControlName="demograf"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.userPermissions.social" for="field_social">Social</label>
+                    <input type="number" class="form-control" name="social" id="field_social"
+                           formControlName="social"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.userPermissions.procClin" for="field_procClin">Proc Clin</label>
+                    <input type="number" class="form-control" name="procClin" id="field_procClin"
+                           formControlName="procClin"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.userPermissions.dialEnf" for="field_dialEnf">Dial Enf</label>
+                    <input type="number" class="form-control" name="dialEnf" id="field_dialEnf"
+                           formControlName="dialEnf"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.userPermissions.dialStat" for="field_dialStat">Dial Stat</label>
+                    <input type="number" class="form-control" name="dialStat" id="field_dialStat"
+                           formControlName="dialStat"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.userPermissions.qualiStat" for="field_qualiStat">Quali Stat</label>
+                    <input type="number" class="form-control" name="qualiStat" id="field_qualiStat"
+                           formControlName="qualiStat"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.userPermissions.labLink" for="field_labLink">Lab Link</label>
+                    <input type="number" class="form-control" name="labLink" id="field_labLink"
+                           formControlName="labLink"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.userPermissions.gidLink" for="field_gidLink">Gid Link</label>
+                    <input type="number" class="form-control" name="gidLink" id="field_gidLink"
+                           formControlName="gidLink"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.userPermissions.asterixFarma" for="field_asterixFarma">Asterix Farma</label>
+                    <input type="number" class="form-control" name="asterixFarma" id="field_asterixFarma"
+                           formControlName="asterixFarma"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.userPermissions.asterixGabMed" for="field_asterixGabMed">Asterix Gab Med</label>
+                    <input type="number" class="form-control" name="asterixGabMed" id="field_asterixGabMed"
+                           formControlName="asterixGabMed"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

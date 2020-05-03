@@ -1,0 +1,80 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-user-extra-heading" jhiTranslate="dialwinApp.userExtra.home.createOrEditLabel">Create or edit a User Extra</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.userExtra.activo" for="field_activo">Activo</label>
+                    <input type="checkbox" class="form-control" name="activo" id="field_activo"
+                           formControlName="activo"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.userExtra.nome" for="field_nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="field_nome"
+                           formControlName="nome"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.userExtra.morada" for="field_morada">Morada</label>
+                    <input type="text" class="form-control" name="morada" id="field_morada"
+                           formControlName="morada"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.userExtra.codP" for="field_codP">Cod P</label>
+                    <input type="text" class="form-control" name="codP" id="field_codP"
+                           formControlName="codP"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.userExtra.telef" for="field_telef">Telef</label>
+                    <input type="text" class="form-control" name="telef" id="field_telef"
+                           formControlName="telef"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.userExtra.permissChange" for="field_permissChange">Permiss Change</label>
+                    <input type="checkbox" class="form-control" name="permissChange" id="field_permissChange"
+                           formControlName="permissChange"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.userExtra.nif" for="field_nif">Nif</label>
+                    <input type="number" class="form-control" name="nif" id="field_nif"
+                           formControlName="nif"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.userExtra.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" formControlName="user">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id === editForm.get('user').value?.id ? editForm.get('user').value : userOption" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.userExtra.userPermissions" for="field_userPermissions">User Permissions</label>
+                    <select class="form-control" id="field_userPermissions" name="userPermissions" formControlName="userPermissions">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userPermissionsOption.id === editForm.get('userPermissions').value?.id ? editForm.get('userPermissions').value : userPermissionsOption" *ngFor="let userPermissionsOption of userpermissions; trackBy: trackUserPermissionsById">{{userPermissionsOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="dialwinApp.userExtra.userProfile" for="field_userProfile">User Profile</label>
+                    <select class="form-control" id="field_userProfile" name="userProfile" formControlName="userProfile">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userProfileOption.id === editForm.get('userProfile').value?.id ? editForm.get('userProfile').value : userProfileOption" *ngFor="let userProfileOption of userprofiles; trackBy: trackUserProfileById">{{userProfileOption.nome}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

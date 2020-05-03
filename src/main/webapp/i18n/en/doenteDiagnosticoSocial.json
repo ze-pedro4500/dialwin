@@ -1,0 +1,23 @@
+{
+  "dialwinApp": {
+    "doenteDiagnosticoSocial": {
+      "home": {
+        "title": "Doente Diagnostico Socials",
+        "createLabel": "Create a new Doente Diagnostico Social",
+        "createOrEditLabel": "Create or edit a Doente Diagnostico Social",
+        "notFound": "No Doente Diagnostico Socials found"
+      },
+      "created": "A new Doente Diagnostico Social is created with identifier {{ param }}",
+      "updated": "A Doente Diagnostico Social is updated with identifier {{ param }}",
+      "deleted": "A Doente Diagnostico Social is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Doente Diagnostico Social {{ id }}?"
+      },
+      "detail": {
+        "title": "Doente Diagnostico Social"
+      },
+      "descr": "Descr",
+      "doente": "Doente"
+    }
+  }
+}

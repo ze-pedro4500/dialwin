@@ -1,0 +1,23 @@
+{
+  "dialwinApp": {
+    "aCES": {
+      "home": {
+        "title": "ACES",
+        "createLabel": "Create a new ACES",
+        "createOrEditLabel": "Create or edit a ACES",
+        "notFound": "No ACES found"
+      },
+      "created": "A new ACES is created with identifier {{ param }}",
+      "updated": "A ACES is updated with identifier {{ param }}",
+      "deleted": "A ACES is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete ACES {{ id }}?"
+      },
+      "detail": {
+        "title": "ACES"
+      },
+      "nome": "Nome",
+      "doenteIdentidade": "Doente Identidade"
+    }
+  }
+}

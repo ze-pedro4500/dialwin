@@ -1,0 +1,68 @@
+{
+    "name": "UserExtra",
+    "fields": [
+        {
+            "fieldName": "activo",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "morada",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codP",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telef",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "permissChange",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "nif",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "userExtra",
+            "relationshipName": "user",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "userPermissions",
+            "otherEntityRelationshipName": "userExtra",
+            "relationshipName": "userPermissions",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "userProfile",
+            "otherEntityRelationshipName": "userExtra",
+            "relationshipName": "userProfile",
+            "otherEntityField": "nome"
+        }
+    ],
+    "changelogDate": "20200111000249",
+    "entityTableName": "user_extra",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity DoenteSocioFamiliar.
+    -->
+    <changeSet id="20200111000237-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="doente_id"
+                                 baseTableName="doente_socio_familiar"
+                                 constraintName="fk_doente_socio_familiar_doente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="doente"/>
+
+        <addForeignKeyConstraint baseColumnNames="vitalidade_id"
+                                 baseTableName="doente_socio_familiar"
+                                 constraintName="fk_doente_socio_familiar_vitalidade_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="vitalidade"/>
+
+        <addForeignKeyConstraint baseColumnNames="habit_id"
+                                 baseTableName="doente_socio_familiar"
+                                 constraintName="fk_doente_socio_familiar_habit_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="habit"/>
+
+        <addForeignKeyConstraint baseColumnNames="grau_conf_id"
+                                 baseTableName="doente_socio_familiar"
+                                 constraintName="fk_doente_socio_familiar_grau_conf_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="grau_conf"/>
+
+        <addForeignKeyConstraint baseColumnNames="profissao_id"
+                                 baseTableName="doente_socio_familiar"
+                                 constraintName="fk_doente_socio_familiar_profissao_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profissao"/>
+
+        <addForeignKeyConstraint baseColumnNames="sit_prof_id"
+                                 baseTableName="doente_socio_familiar"
+                                 constraintName="fk_doente_socio_familiar_sit_prof_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sit_prof"/>
+
+    </changeSet>
+</databaseChangeLog>

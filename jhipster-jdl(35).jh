@@ -1,0 +1,223 @@
+
+enum Sexo {
+Masculino, Feminino
+}
+
+enum EstCivil {
+Solteiro, Casado
+}
+
+enum Habilitacoes {
+Iletrado, LeEscreve, EnsinoBasico, NonoAno,
+DecimoSegundoAno, CursoTecnico, Cursosuperior
+}
+
+enum Situacao {
+StatusPRHD,
+StatusFalecido,
+StatusTranspl,
+StatusRecFam,
+StatusTransfer,
+StatusDP,
+StatusInternado,
+StatusEmTransito,
+StatusEmFerias,
+StatusAlta
+}
+
+entity Vitalidade {
+	nome String,
+    percentagem Integer
+}
+
+entity ACES {
+	nome String
+}
+
+
+
+entity Doente {
+	situacao Situacao
+    }
+
+entity DoenteIdentidade {
+	nome String,
+    dataNasc LocalDate,
+    altura Integer,
+    morada String,
+    codPost String,
+    freguesia String,
+    nif Integer,
+    medFam String,
+    sexo Sexo,
+    telef Integer,
+    telef2 Integer,
+    docId Integer,
+    nBenef Integer,
+    nUtente Integer,
+    numProcHosp Integer
+}
+
+entity Pais {
+	nome String,
+    sigla String
+}
+
+entity DoenteContactos {
+	transportador String,
+    telefTransp Integer
+}
+
+entity DoenteContactosOutros {
+	nome String,
+    parentesco String,
+    coabita Boolean,
+    telef Integer,
+    ocupacao String,
+    obs String,
+    preferencial Boolean
+}
+
+entity SitProf {
+	nome String
+}
+
+entity Profissao {
+	nome String
+}
+
+entity DoenteSocioFamiliar {
+    habilitacoes Habilitacoes,
+    estCivil EstCivil,
+    conjugeNome String,
+    conjugeProf String,
+    activTempLiv String,
+    habitacaoObs String,
+    grauConfortoObs String,
+    respostaSocial String
+}
+
+entity DoenteDiagnosticoSocial {
+	descr String
+}
+
+entity DoenteRegistosIntervencoes {
+	descr String
+}
+
+entity DoenteHistMovimentos {
+	data LocalDate,
+    situacao String,
+    obs String
+}
+
+entity HorarioDoente {
+	dia String,
+    turno String,
+    sala Integer,
+    posto String,
+    duracao Integer
+}
+
+entity SubSistemas {
+	gidNome String,
+    gidCode Integer
+}
+
+entity SubSisGrupo {
+	//gidCode PK
+    gidDesigna String,
+    gidGrupo String
+}
+
+entity Turnos {
+	nome String
+}
+
+entity CentroSaude {
+	nome String
+}
+
+
+entity HospRef {
+	nome String
+}
+
+entity Habit	{
+	nome String
+}
+
+entity GrauConf {
+	nome String
+}
+
+entity UserExtra {
+	activo Boolean,
+    nome String,
+    morada String,
+    codP String,
+    telef String,
+    permissChange Boolean,
+    nif Integer
+}
+
+entity UserProfile {
+	nome String,
+    demograf Integer,
+    social Integer,
+    procClin Integer,
+    dialEnf Integer,
+    dialStat Integer,
+    qualiStat Integer,
+    labLink Integer,
+    gidLink Integer,
+    asterixFarma Integer,
+    asterixGabMed Integer
+}
+
+entity UserPermissions {
+	demograf Integer,
+    social Integer,
+    procClin Integer,
+    dialEnf Integer,
+    dialStat Integer,
+    qualiStat Integer,
+    labLink Integer,
+    gidLink Integer,
+    asterixFarma Integer,
+    asterixGabMed Integer
+}
+
+
+relationship ManyToOne {
+	Pais to DoenteIdentidade{Pais(nome)},
+    DoenteIdentidade{Subsistemas(gidNome)} to SubSistemas,
+    SubSistemas{SubSisGrupo(gidDesigna)} to SubSisGrupo,
+    DoenteSocioFamiliar{Vitalidade(percentagem)} to Vitalidade
+}
+
+relationship OneToOne {
+	UserExtra{user} to User,
+	UserExtra to UserPermissions,
+	DoenteIdentidade to Doente,
+	DoenteContactos to Doente,
+    DoenteSocioFamiliar to Doente,
+
+}
+
+relationship OneToMany {
+        Doente to HorarioDoente,
+        Doente to DoenteDiagnosticoSocial,
+        Doente to DoenteRegistosIntervencoes,
+        Doente to DoenteHistMovimentos,
+        Doente to DoenteContactosOutros,
+        UserProfile to UserExtra{UserProfile(nome)},
+		CentroSaude to DoenteIdentidade{CentroSaude(nome)},
+		ACES to DoenteIdentidade{ACES(nome)},
+		Habit to DoenteSocioFamiliar{Habit(nome)},
+        GrauConf to DoenteSocioFamiliar{GrauConf(nome)},
+		Profissao to DoenteSocioFamiliar{Profissao(nome)},
+        SitProf to DoenteSocioFamiliar{SitProf(nome)},
+		Turnos to Doente{Turnos(nome)},
+        HospRef to DoenteIdentidade{HospRef(nome)}
+}

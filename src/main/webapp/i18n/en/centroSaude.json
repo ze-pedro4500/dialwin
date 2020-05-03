@@ -1,0 +1,23 @@
+{
+  "dialwinApp": {
+    "centroSaude": {
+      "home": {
+        "title": "Centro Saudes",
+        "createLabel": "Create a new Centro Saude",
+        "createOrEditLabel": "Create or edit a Centro Saude",
+        "notFound": "No Centro Saudes found"
+      },
+      "created": "A new Centro Saude is created with identifier {{ param }}",
+      "updated": "A Centro Saude is updated with identifier {{ param }}",
+      "deleted": "A Centro Saude is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Centro Saude {{ id }}?"
+      },
+      "detail": {
+        "title": "Centro Saude"
+      },
+      "nome": "Nome",
+      "doenteIdentidade": "Doente Identidade"
+    }
+  }
+}

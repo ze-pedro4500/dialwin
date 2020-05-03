@@ -1,0 +1,84 @@
+<div id="demo" *ngIf="historico">
+    <div *ngIf="!newMovimento">    
+    <h2 id="page-heading">
+        <button (click)="print()" id="print" class="but btn btn-primary float-right">
+            <span>
+            Imprimir
+            </span>
+        </button>
+        <button (click)="addMovimento()" id="jh-create-entity" class="but btn btn-primary float-right jh-create-entity create-doente-hist-movimentos">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span>
+            Adicionar
+            </span>
+        </button>
+    </h2>
+    <br/>
+    <div id="print-section" class="table-responsive" *ngIf="doenteHistMovimentos?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span class="item">Data</span></th>
+            <th scope="col" ><span class="item">Situacao</span></th>
+            <th scope="col" ><span class="item">Observações</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let doenteHistMovimentos of doenteHistMovimentos ;trackBy: trackId">
+                <td class="item">{{doenteHistMovimentos.data | date:'mediumDate'}}</td>
+                <td class="item">{{doenteHistMovimentos.situacao}}</td>
+                <td class="item">{{doenteHistMovimentos.obs}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit" (click)="delete(doenteHistMovimentos)"
+                                class="rem btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Remover</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div *ngIf="newMovimento">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+                <h2 id="jhi-doente-hist-movimentos-heading" style="margin-left: 27rem;">Adicionar Movimento</h2>
+                <div>
+                    <div class="form-group">
+                        <label class="lab form-control-label" jhiTranslate="dialwinApp.doenteHistMovimentos.data" for="field_data">Data</label>
+                        <div class="input-group">
+                            <input id="field_data" type="text" class="form-control" name="data" ngbDatepicker  #dataDp="ngbDatepicker" formControlName="data"/>
+                            <span class="input-group-append">
+                                <button type="button" class="btn btn-secondary" (click)="dataDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="lab form-control-label" for="field_situacao">Situação</label>
+                        <input type="text" class="form-control" name="situacao" id="field_situacao"
+                               formControlName="situacao"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="lab form-control-label" for="field_obs">Observações</label>
+                        <input type="text" class="form-control" name="obs" id="field_obs"
+                               formControlName="obs"/>
+                    </div>
+                </div>
+                <div>
+                    <button (click)="cancel()" type="button" id="cancel-save" class="but btn btn-secondary">
+                        <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancelar</span>
+                    </button>
+                    <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="but btn btn-primary">
+                        <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Guardar</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

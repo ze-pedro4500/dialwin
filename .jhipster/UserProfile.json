@@ -1,0 +1,67 @@
+{
+    "name": "UserProfile",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "demograf",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "social",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "procClin",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dialEnf",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dialStat",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "qualiStat",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "labLink",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "gidLink",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "asterixFarma",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "asterixGabMed",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "userExtra",
+            "otherEntityRelationshipName": "userProfile",
+            "relationshipName": "userExtra"
+        }
+    ],
+    "changelogDate": "20200111000250",
+    "entityTableName": "user_profile",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

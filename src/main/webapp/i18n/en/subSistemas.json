@@ -1,0 +1,24 @@
+{
+  "dialwinApp": {
+    "subSistemas": {
+      "home": {
+        "title": "Sub Sistemas",
+        "createLabel": "Create a new Sub Sistemas",
+        "createOrEditLabel": "Create or edit a Sub Sistemas",
+        "notFound": "No Sub Sistemas found"
+      },
+      "created": "A new Sub Sistemas is created with identifier {{ param }}",
+      "updated": "A Sub Sistemas is updated with identifier {{ param }}",
+      "deleted": "A Sub Sistemas is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sub Sistemas {{ id }}?"
+      },
+      "detail": {
+        "title": "Sub Sistemas"
+      },
+      "gidNome": "Gid Nome",
+      "gidCode": "Gid Code",
+      "subSisGrupo": "Sub Sis Grupo"
+    }
+  }
+}

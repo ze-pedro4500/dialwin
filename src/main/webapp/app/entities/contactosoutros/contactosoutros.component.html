@@ -1,0 +1,65 @@
+<div>
+    <h2 id="page-heading">
+        
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="doenteContactosOutros?.length === 0">
+        <span jhiTranslate="dialwinApp.doenteContactosOutros.home.notFound">No doenteContactosOutros found</span>
+    </div>
+    <div class="table-responsive" *ngIf="doenteContactosOutros?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.nome">Nome</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.parentesco">Parentesco</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.coabita">Coabita</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.telef">Telef</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.ocupacao">Ocupacao</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.obs">Obs</span></th>
+            <th scope="col" ><span jhiTranslate="dialwinApp.doenteContactosOutros.preferencial">Preferencial</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let doenteContactosOutros of doenteContactosOutros ;trackBy: trackId">
+                <td>{{doenteContactosOutros.nome}}</td>
+                <td>{{doenteContactosOutros.parentesco}}</td>
+                <td>{{doenteContactosOutros.coabita}}</td>
+                <td>{{doenteContactosOutros.telef}}</td>
+                <td>{{doenteContactosOutros.ocupacao}}</td>
+                <td>{{doenteContactosOutros.obs}}</td>
+                <td>{{doenteContactosOutros.preferencial}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/doente-contactos-outros', doenteContactosOutros.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/doente-contactos-outros', doenteContactosOutros.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit" (click)="delete(doenteContactosOutros)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-doente-contactos-outros" [routerLink]="['/doente-contactos-outros/new']">
+        <fa-icon [icon]="'plus'"></fa-icon>
+        <span>
+        Adicionar
+        </span>
+    </button>
+</div>

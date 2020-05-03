@@ -1,0 +1,9 @@
+{
+  "dialwinApp": {
+    "EstCivil": {
+      "null": "",
+      "Solteiro": "Solteiro",
+      "Casado": "Casado"
+    }
+  }
+}

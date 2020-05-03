@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="doenteContactos">
+            <h2><span jhiTranslate="dialwinApp.doenteContactos.detail.title">Doente Contactos</span> {{doenteContactos.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="dialwinApp.doenteContactos.transportador">Transportador</span></dt>
+                <dd>
+                    <span>{{doenteContactos.transportador}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteContactos.telefTransp">Telef Transp</span></dt>
+                <dd>
+                    <span>{{doenteContactos.telefTransp}}</span>
+                </dd>
+                <dt><span jhiTranslate="dialwinApp.doenteContactos.doente">Doente</span></dt>
+                <dd>
+                    <div *ngIf="doenteContactos.doente">
+                        <a [routerLink]="['/doente', doenteContactos.doente?.id, 'view']">{{doenteContactos.doente?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/doente-contactos', doenteContactos.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

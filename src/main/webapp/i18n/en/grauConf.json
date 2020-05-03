@@ -1,0 +1,23 @@
+{
+  "dialwinApp": {
+    "grauConf": {
+      "home": {
+        "title": "Grau Confs",
+        "createLabel": "Create a new Grau Conf",
+        "createOrEditLabel": "Create or edit a Grau Conf",
+        "notFound": "No Grau Confs found"
+      },
+      "created": "A new Grau Conf is created with identifier {{ param }}",
+      "updated": "A Grau Conf is updated with identifier {{ param }}",
+      "deleted": "A Grau Conf is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Grau Conf {{ id }}?"
+      },
+      "detail": {
+        "title": "Grau Conf"
+      },
+      "nome": "Nome",
+      "doenteSocioFamiliar": "Doente Socio Familiar"
+    }
+  }
+}
